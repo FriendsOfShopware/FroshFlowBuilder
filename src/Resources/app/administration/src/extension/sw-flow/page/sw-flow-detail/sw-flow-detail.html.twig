@@ -1,0 +1,10 @@
+{% block sw_flow_tabs_header_extension %}
+    {% parent %}
+    <sw-tabs-item
+            v-if="!isNewFlow"
+            class="sw-flow-detail__tab-frosh-history"
+            :route="{ name: 'sw.flow.detail.frosh_history', params: { id: $route.params.id } }"
+            :title="$tc('frosh-flow-builder.history.tabTitle')">
+        {{ $tc('frosh-flow-builder.history.tabTitle') }}
+    </sw-tabs-item>
+{% endblock %}

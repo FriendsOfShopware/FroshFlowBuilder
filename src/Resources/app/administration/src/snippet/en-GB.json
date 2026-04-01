@@ -1,0 +1,17 @@
+{
+    "frosh-flow-builder": {
+        "history": {
+            "tabTitle": "History",
+            "cardTitle": "History",
+            "columns": {
+                "executedAt": "Executed at",
+                "status": "Status",
+                "triggeredBy": "Triggered by"
+            },
+            "state": {
+                "success": "Successful",
+                "error": "Failed"
+            }
+        }
+    }
+}

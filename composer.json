@@ -1,0 +1,22 @@
+{
+    "name": "frosh-flow-builder/frosh-flow-builder",
+    "description": "frosh-flow-builder/frosh-flow-builder",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.7.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "Frosh\\FlowBuilder\\FroshFlowBuilder",
+        "label": {
+            "de-DE": "Flow Builder",
+            "en-GB": "Flow Builder"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Frosh\\FlowBuilder\\": "src/"
+        }
+    }
+}

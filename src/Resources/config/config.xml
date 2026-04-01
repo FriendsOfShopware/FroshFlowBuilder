@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Configuration</title>
+        <title lang="de-DE">Konfiguration</title>
+
+        <input-field type="int">
+            <name>retentionTime</name>
+            <label>Retention time for flow execution history</label>
+            <label lang="de-DE">Aufbewahrungszeit für Flow-Ausführungshistorie</label>
+            <defaultValue>30</defaultValue>
+            <helpText>Number of days after which entries will be cleared from the flow execution history.</helpText>
+            <helpText lang="de-DE">Anzahl der Tage, nach denen Einträge aus der Flow-Ausführungshistorie gelöscht werden.</helpText>
+        </input-field>
+    </card>
+
+</config>
