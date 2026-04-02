@@ -1,17 +1,17 @@
 {
-    "frosh-flow-builder": {
-        "history": {
-            "tabTitle": "Verlauf",
-            "cardTitle": "Verlauf",
-            "columns": {
-                "executedAt": "Ausgeführt am",
-                "status": "Status",
-                "triggeredBy": "Ausgelöst von"
-            },
-            "state": {
-                "success": "Erfolgreich",
-                "error": "Fehlgeschlagen"
-            }
-        }
+  "frosh-flow-builder": {
+    "history": {
+      "tabTitle": "Verlauf",
+      "cardTitle": "Verlauf",
+      "columns": {
+        "executedAt": "Ausgeführt am",
+        "status": "Status",
+        "triggeredBy": "Ausgelöst von"
+      },
+      "state": {
+        "success": "Erfolgreich",
+        "error": "Fehlgeschlagen"
+      }
     }
+  }
 }

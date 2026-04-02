@@ -9,6 +9,7 @@
         <prototype
                 namespace="Frosh\FlowBuilder\"
                 resource="../../"
+                exclude="../../FroshTools/"
         />
     </services>
 </container>
