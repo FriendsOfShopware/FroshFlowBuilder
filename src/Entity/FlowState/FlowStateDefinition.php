@@ -44,7 +44,7 @@ class FlowStateDefinition extends EntityDefinition
             (new IdField('id', 'id'))->addFlags(new PrimaryKey(), new Required()),
             (new FkField('flow_id', 'flowId', FlowDefinition::class))->addFlags(new Required()),
             (new StringField('state', 'state'))->addFlags(new Required()),
-            new LongTextField('error', 'error'),
+            new JsonField('error', 'error'),
             new JsonField('data', 'data'),
             new FkField('user_id', 'userId', UserDefinition::class),
             new FkField('integration_id', 'integrationId', IntegrationDefinition::class),

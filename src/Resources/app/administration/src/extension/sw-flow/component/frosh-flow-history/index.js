@@ -12,6 +12,11 @@ Component.register('frosh-flow-history', {
       default: false,
     },
   },
+  data: () => {
+    return {
+      modalEntry: null
+    }
+  },
   computed: {
     columns() {
       return [
@@ -44,5 +49,15 @@ Component.register('frosh-flow-history', {
 
       return colorMap[state] || '#d1d9e0';
     },
+
+    openDetailsModal(item) {
+      this.modalEntry = item
+    },
+    onCloseModal(){
+      this.modalEntry = null
+    }
   },
+  created() {
+    console.log(this.flow.extensions.froshFlowStates)
+  }
 })

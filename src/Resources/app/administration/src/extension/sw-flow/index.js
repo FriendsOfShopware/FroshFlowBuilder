@@ -1,4 +1,5 @@
 import './component/frosh-flow-history'
+import './component/frosh-flow-data-modal'
 import './page/sw-flow-detail'
 
 Shopware.Module.register('frosh-flow-tab-history', {

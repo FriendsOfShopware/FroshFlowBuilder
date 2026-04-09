@@ -1,57 +1,71 @@
-<mt-card
-        :is-loading="isLoading"
-        :title="$tc('frosh-flow-builder.history.cardTitle')"
-        position-identifier="sw-flow-frosh-history-list"
->
-    <template #grid>
-        <sw-one-to-many-grid
-            v-if="flow"
-            :collection="flow.extensions.froshFlowStates"
-            :columns="columns"
-            :full-page="false"
-            :local-mode="false"
-            :allow-inline-edit="false"
-            :allow-delete="false"
-            :selectable="false"
-        >
-            <template #column-createdAt="{ item }">
-                {{ dateFilter(item.createdAt, { hour: '2-digit', minute: '2-digit' }) }}
-            </template>
-            <template #column-state="{ item }">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <sw-color-badge
-                        :color="getStateColor(item.state)"
-                        rounded
-                    />
-                    {{ $tc('frosh-flow-builder.history.state.' + item.state) }}
-                </div>
-            </template>
-            <template #column-triggeredBy="{ item }">
-                <router-link
-                    v-if="item.customer"
-                    :to="{ name: 'sw.customer.detail', params: { id: item.customerId } }"
-                    style="display: inline-flex; align-items: center; gap: 6px;"
-                >
-                    <sw-icon name="regular-users" size="16" />
-                    {{ item.customer.firstName }} {{ item.customer.lastName }} ({{ item.customer.customerNumber }})
-                </router-link>
-                <router-link
-                    v-else-if="item.user"
-                    :to="{ name: 'sw.users.permissions.user.detail', params: { id: item.userId } }"
-                    style="display: inline-flex; align-items: center; gap: 6px;"
-                >
-                    <sw-icon name="regular-user" size="16" />
-                    {{ item.user.username }}
-                </router-link>
-                <router-link
-                    v-else-if="item.integration"
-                    :to="{ name: 'sw.integration.index' }"
-                    style="display: inline-flex; align-items: center; gap: 6px;"
-                >
-                    <sw-icon name="regular-plug" size="16" />
-                    {{ item.integration.label }}
-                </router-link>
-            </template>
-        </sw-one-to-many-grid>
-    </template>
-</mt-card>
+<div>
+    <mt-card
+            :is-loading="isLoading"
+            :title="$tc('frosh-flow-builder.history.cardTitle')"
+            position-identifier="sw-flow-frosh-history-list"
+    >
+        <template #grid>
+            <sw-one-to-many-grid
+                    v-if="flow"
+                    :collection="flow.extensions.froshFlowStates"
+                    :columns="columns"
+                    :full-page="false"
+                    :local-mode="false"
+                    :allow-inline-edit="false"
+                    :allow-delete="false"
+                    :selectable="false"
+            >
+                <template #column-createdAt="{ item }">
+                    {{ dateFilter(item.createdAt, { hour: '2-digit', minute: '2-digit' }) }}
+                </template>
+                <template #column-state="{ item }">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <sw-color-badge
+                                :color="getStateColor(item.state)"
+                                rounded
+                        />
+                        {{ $tc('frosh-flow-builder.history.state.' + item.state) }}
+                    </div>
+                </template>
+                <template #column-triggeredBy="{ item }">
+                    <router-link
+                            v-if="item.customer"
+                            :to="{ name: 'sw.customer.detail', params: { id: item.customerId } }"
+                            style="display: inline-flex; align-items: center; gap: 6px;"
+                    >
+                        <sw-icon name="regular-users" size="16"/>
+                        {{ item.customer.firstName }} {{ item.customer.lastName }} ({{ item.customer.customerNumber }})
+                    </router-link>
+                    <router-link
+                            v-else-if="item.user"
+                            :to="{ name: 'sw.users.permissions.user.detail', params: { id: item.userId } }"
+                            style="display: inline-flex; align-items: center; gap: 6px;"
+                    >
+                        <sw-icon name="regular-user" size="16"/>
+                        {{ item.user.username }}
+                    </router-link>
+                    <router-link
+                            v-else-if="item.integration"
+                            :to="{ name: 'sw.integration.index' }"
+                            style="display: inline-flex; align-items: center; gap: 6px;"
+                    >
+                        <sw-icon name="regular-plug" size="16"/>
+                        {{ item.integration.label }}
+                    </router-link>
+                </template>
+                <template #actions="{ item }">
+                    <sw-context-menu-item
+                            @click="openDetailsModal(item)"
+                    >
+                        {{ $tc('frosh-flow-builder.history.actions.showDetails') }}
+                    </sw-context-menu-item>
+                </template>
+            </sw-one-to-many-grid>
+        </template>
+    </mt-card>
+    <frosh-flow-data-modal
+            v-if="modalEntry"
+            :flowHistoryEntry="modalEntry"
+            @modal-close="onCloseModal"
+    />
+</div>

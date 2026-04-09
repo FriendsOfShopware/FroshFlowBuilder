@@ -19,7 +19,7 @@ class FlowStateEntity extends Entity
 
     protected string $state;
 
-    protected ?string $error = null;
+    protected ?array $error = null;
 
     protected ?array $data = null;
 
@@ -57,12 +57,12 @@ class FlowStateEntity extends Entity
         $this->state = $state;
     }
 
-    public function getError(): ?string
+    public function getError(): ?array
     {
         return $this->error;
     }
 
-    public function setError(?string $error): void
+    public function setError(?array $error): void
     {
         $this->error = $error;
     }

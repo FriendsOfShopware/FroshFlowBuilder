@@ -69,15 +69,25 @@ class FlowSubscriber implements EventSubscriberInterface
             $customerId = $salesChannelContext->getCustomerId();
         }
 
+        $exception = $extension->exception;
 
-        $this->flowStateRepo->create([[
-            'flowId' => $extension->flow->getId(),
-            'state' => $state,
-            'error' => $extension->exception?->getMessage(),
-            'data' => $extension->event->stored(),
-            'userId' => $userId,
-            'integrationId' => $integrationId,
-            'customerId' => $customerId
-        ]], Context::createCLIContext());
+        try {
+            $this->flowStateRepo->create([[
+                'flowId' => $extension->flow->getId(),
+                'state' => $state,
+                'error' => $exception ? [
+                    'message' => $exception->getMessage(),
+                    'file' => $exception->getFile(),
+                    'line' => $exception->getLine(),
+                    'type' => $exception::class
+                ] : null,
+                'data' => $extension->event->stored(),
+                'userId' => $userId,
+                'integrationId' => $integrationId,
+                'customerId' => $customerId
+            ]], Context::createCLIContext());
+        }catch(\Throwable $e) {
+            dd($e->getMessage());
+        }
     }
 }

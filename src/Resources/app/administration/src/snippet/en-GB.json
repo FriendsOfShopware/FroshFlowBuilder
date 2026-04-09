@@ -11,7 +11,18 @@
             "state": {
                 "success": "Successful",
                 "error": "Failed"
+            },
+            "actions": {
+                "showDetails": "Show details"
             }
+        },
+        "dataModal": {
+            "title": "Flow",
+            "payloadLabel": "Payload",
+            "errorType": "Exception",
+            "errorLine": "Line",
+            "errorFile": "File",
+            "errorMessage": "Message"
         }
     }
 }
