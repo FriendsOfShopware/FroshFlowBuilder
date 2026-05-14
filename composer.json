@@ -12,24 +12,11 @@
     ],
     "require": {
         "shopware/administration": "~6.7.0",
-        "shopware/core": "~6.7.0",
-        "php": "~8.3"
-    },
-    "require-dev": {
-        "ergebnis/composer-normalize": "^2.51"
+        "shopware/core": "~6.7.0"
     },
     "autoload": {
         "psr-4": {
             "Frosh\\FlowBuilder\\": "src/"
-        }
-    },
-    "config": {
-        "allow-plugins": {
-            "ergebnis/composer-normalize": true,
-            "symfony/runtime": false
-        },
-        "platform": {
-            "php": "8.3"
         }
     },
     "extra": {
