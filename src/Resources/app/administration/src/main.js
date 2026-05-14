@@ -1,1 +1,1 @@
-import './extension/sw-flow'
+import './extension/sw-flow';

@@ -1,28 +1,28 @@
 {
-  "frosh-flow-builder": {
-    "history": {
-      "tabTitle": "Verlauf",
-      "cardTitle": "Verlauf",
-      "columns": {
-        "executedAt": "Ausgeführt am",
-        "status": "Status",
-        "triggeredBy": "Ausgelöst von"
-      },
-      "state": {
-        "success": "Erfolgreich",
-        "error": "Fehlgeschlagen"
-      },
-      "actions": {
-        "showDetails": "Details anzeigen"
-      }
-    },
-    "dataModal": {
-      "title": "Flow",
-      "payloadLabel": "Daten",
-      "errorType": "Exception",
-      "errorLine": "Zeile",
-      "errorFile": "Datei",
-      "errorMessage": "Nachricht"
+    "frosh-flow-builder": {
+        "history": {
+            "tabTitle": "Verlauf",
+            "cardTitle": "Verlauf",
+            "columns": {
+                "executedAt": "Ausgeführt am",
+                "status": "Status",
+                "triggeredBy": "Ausgelöst von"
+            },
+            "state": {
+                "success": "Erfolgreich",
+                "error": "Fehlgeschlagen"
+            },
+            "actions": {
+                "showDetails": "Details anzeigen"
+            }
+        },
+        "dataModal": {
+            "title": "Flow",
+            "payloadLabel": "Daten",
+            "errorType": "Exception",
+            "errorLine": "Zeile",
+            "errorFile": "Datei",
+            "errorMessage": "Nachricht"
+        }
     }
-  }
 }

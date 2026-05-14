@@ -1,22 +1,61 @@
 {
-    "name": "frosh-flow-builder/frosh-flow-builder",
-    "description": "frosh-flow-builder/frosh-flow-builder",
+    "name": "frosh/flow-builder",
+    "description": "Extends the Shopware 6 Flow Builder with history and error tracking",
+    "license": "MIT",
     "type": "shopware-platform-plugin",
     "version": "1.0.0",
-    "license": "MIT",
-    "require": {
-        "shopware/core": "~6.7.0"
-    },
-    "extra": {
-        "shopware-plugin-class": "Frosh\\FlowBuilder\\FroshFlowBuilder",
-        "label": {
-            "de-DE": "Flow Builder",
-            "en-GB": "Flow Builder"
+    "authors": [
+        {
+            "name": "FriendsOfShopware",
+            "homepage": "https://friendsofshopware.com"
         }
+    ],
+    "require": {
+        "shopware/administration": "~6.7.0",
+        "shopware/core": "~6.7.0",
+        "php": "~8.3"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.51"
     },
     "autoload": {
         "psr-4": {
             "Frosh\\FlowBuilder\\": "src/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "symfony/runtime": false
+        },
+        "platform": {
+            "php": "8.3"
+        }
+    },
+    "extra": {
+        "description": {
+            "de-DE": "Erweitert den Shopware 6 Flow Builder um eine Historie und Fehler-Tracking. Jede Flow-Ausführung wird protokolliert, die Fehler-Details sind in der Flow-Detailseite sichtbar.",
+            "en-GB": "Extends the Shopware 6 Flow Builder with history and error tracking. Every flow run is logged, failed flows store exception details on the flow detail page."
+        },
+        "label": {
+            "de-DE": "Flow Builder",
+            "en-GB": "Flow Builder"
+        },
+        "manufacturerLink": {
+            "de-DE": "https://github.com/FriendsOfShopware/FroshFlowBuilder",
+            "en-GB": "https://github.com/FriendsOfShopware/FroshFlowBuilder"
+        },
+        "shopware-plugin-class": "Frosh\\FlowBuilder\\FroshFlowBuilder",
+        "supportLink": {
+            "de-DE": "https://github.com/FriendsOfShopware/FroshFlowBuilder/issues",
+            "en-GB": "https://github.com/FriendsOfShopware/FroshFlowBuilder/issues"
+        }
+    },
+    "scripts": {
+        "check": [
+            "docker run --rm -v $(pwd):/ext shopware/shopware-cli:latest extension validate --check-against lowest --full /ext",
+            "docker run --rm -v $(pwd):/ext shopware/shopware-cli:latest extension validate --check-against highest --full /ext"
+        ],
+        "format": "docker run --rm -v $(pwd):/ext shopware/shopware-cli:latest extension format /ext"
     }
 }
