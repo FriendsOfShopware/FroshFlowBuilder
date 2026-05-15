@@ -1,9 +1,9 @@
 <?php
 
-namespace Frosh\FlowBuilder\FroshTools\Checker;
+namespace Frosh\FlowBuilderInsights\FroshTools\Checker;
 
 use Doctrine\DBAL\Connection;
-use Frosh\FlowBuilder\Subscriber\FlowSubscriber;
+use Frosh\FlowBuilderInsights\Subscriber\FlowSubscriber;
 use Frosh\Tools\Components\Health\Checker\CheckerInterface;
 use Frosh\Tools\Components\Health\Checker\HealthChecker\HealthCheckerInterface;
 use Frosh\Tools\Components\Health\HealthCollection;

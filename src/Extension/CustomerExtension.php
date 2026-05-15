@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Frosh\FlowBuilder\Extension;
+namespace Frosh\FlowBuilderInsights\Extension;
 
-use Frosh\FlowBuilder\Entity\FlowState\FlowStateDefinition;
+use Frosh\FlowBuilderInsights\Entity\FlowState\FlowStateDefinition;
 use Shopware\Core\Checkout\Customer\CustomerDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityExtension;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\OneToManyAssociationField;

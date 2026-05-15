@@ -7,7 +7,7 @@
     <services>
         <defaults autoconfigure="true" autowire="true"/>
         <prototype
-                namespace="Frosh\FlowBuilder\"
+                namespace="Frosh\FlowBuilderInsights\"
                 resource="../../"
                 exclude="../../FroshTools/"
         />

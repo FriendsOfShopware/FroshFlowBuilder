@@ -1,7 +1,7 @@
 <div>
     <mt-card
         :is-loading="isLoading"
-        :title="$tc('frosh-flow-builder.history.cardTitle')"
+        :title="$tc('frosh-flow-builder-insights.history.cardTitle')"
         position-identifier="sw-flow-frosh-history-list"
     >
         <template #grid>
@@ -25,7 +25,7 @@
                             :color="getStateColor(item.state)"
                             rounded
                         />
-                        {{ $tc('frosh-flow-builder.history.state.' + item.state) }}
+                        {{ $tc('frosh-flow-builder-insights.history.state.' + item.state) }}
                     </div>
                 </template>
 
@@ -71,7 +71,7 @@
 
                 <template #actions="{ item }">
                     <sw-context-menu-item @click="openDetailsModal(item)">
-                        {{ $tc('frosh-flow-builder.history.actions.showDetails') }}
+                        {{ $tc('frosh-flow-builder-insights.history.actions.showDetails') }}
                     </sw-context-menu-item>
                 </template>
             </sw-one-to-many-grid>

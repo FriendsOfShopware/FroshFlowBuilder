@@ -1,6 +1,6 @@
 <?php
 
-namespace Frosh\FlowBuilder\ScheduledTask;
+namespace Frosh\FlowBuilderInsights\ScheduledTask;
 
 use Shopware\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 

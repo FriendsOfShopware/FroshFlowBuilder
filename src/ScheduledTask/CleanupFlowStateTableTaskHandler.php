@@ -1,6 +1,6 @@
 <?php
 
-namespace Frosh\FlowBuilder\ScheduledTask;
+namespace Frosh\FlowBuilderInsights\ScheduledTask;
 
 use Doctrine\DBAL\Connection;
 use Psr\Log\LoggerInterface;
@@ -28,7 +28,7 @@ DELETE FROM `frosh_flow_state` WHERE created_at < DATE_SUB(NOW(), INTERVAL :rete
 SQL;
 
         $this->connection->executeStatement($sql, [
-            'retentionTime' => $this->configService->getInt('FroshFlowBuilder.config.retentionTime'),
+            'retentionTime' => $this->configService->getInt('FroshFlowBuilderInsights.config.retentionTime'),
         ]);
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Frosh\FlowBuilder\Entity\FlowState;
+namespace Frosh\FlowBuilderInsights\Entity\FlowState;
 
 use Shopware\Core\Checkout\Customer\CustomerEntity;
 use Shopware\Core\Content\Flow\FlowEntity;
