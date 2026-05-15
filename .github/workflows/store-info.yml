@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install shopware-cli
-        uses: shopware/shopware-cli-action@v1
+        uses: shopware/shopware-cli-action@v3
       - name: Build
         shell: bash
         run: shopware-cli account producer extension info push .
         env:
-          SHOPWARE_CLI_ACCOUNT_EMAIL: ${{ secrets.ACCOUNT_USER }}
-          SHOPWARE_CLI_ACCOUNT_PASSWORD: ${{ secrets.ACCOUNT_PASSWORD }}
+          SHOPWARE_CLI_ACCOUNT_CLIENT_ID: ${{ secrets.SHOPWARE_CLI_ACCOUNT_CLIENT_ID }}
+          SHOPWARE_CLI_ACCOUNT_CLIENT_SECRET: ${{ secrets.SHOPWARE_CLI_ACCOUNT_CLIENT_SECRET }}
