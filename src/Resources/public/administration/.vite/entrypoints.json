@@ -1,0 +1,25 @@
+{
+  "base": "/bundles/froshflowbuilderinsights/administration/",
+  "entryPoints": {
+    "frosh-flow-builder-insights": {
+      "css": [
+        "/bundles/froshflowbuilderinsights/administration/css/frosh-flow-builder-insights.css"
+      ],
+      "dynamic": [],
+      "js": [
+        "/bundles/froshflowbuilderinsights/administration/js/frosh-flow-builder-insights.js"
+      ],
+      "legacy": false,
+      "preload": []
+    }
+  },
+  "legacy": false,
+  "metadatas": {},
+  "version": [
+    "7.0.4",
+    7,
+    0,
+    4
+  ],
+  "viteServer": null
+}

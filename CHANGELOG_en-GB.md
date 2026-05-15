@@ -1,0 +1,10 @@
+# 1.0.0
+- [ci: Update GitHub Actions workflow to use latest actions (#4)](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/commit/d0f7934)
+- [chore: add dev dependency for frosh tools](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/commit/e43d0f1)
+- [ci: update GitHub Actions workflow for store release (#2)](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/commit/8a9fd66)
+- [chore: rename plugin to FroshFlowBuilderInsights (#3)](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/commit/bb098a3)
+- [chore: make ready for store (#1)](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/commit/41ad63a)
+- [feat: combine migrations into one](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/commit/f9fbfcb)
+- [feat: show error information on failed flows](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/commit/ca16c6e)
+- [chore: add plugin icon](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/commit/cb31087)
+- [feat: add FroshTools integration](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/commit/6b497ed)
