@@ -1,5 +1,5 @@
 <sw-modal
-    :title="$tc('frosh-flow-builder.dataModal.title')"
+    :title="$tc('frosh-flow-builder-insights.dataModal.title')"
     @modal-close="onModalChange"
 >
     <template #body>
@@ -11,13 +11,13 @@
             >
                 <sw-description-list>
                     <dt>
-                        {{ $tc('frosh-flow-builder.history.columns.executedAt') }}
+                        {{ $tc('frosh-flow-builder-insights.history.columns.executedAt') }}
                     </dt>
                     <dd>{{ executedAt }}</dd>
                 </sw-description-list>
                 <sw-description-list>
                     <dt>
-                        {{ $tc('frosh-flow-builder.history.columns.status') }}
+                        {{ $tc('frosh-flow-builder-insights.history.columns.status') }}
                     </dt>
                     <dd>
                         <div
@@ -27,13 +27,13 @@
                                 :color="stateColor"
                                 rounded
                             />
-                            {{ $tc('frosh-flow-builder.history.state.' + flowHistoryEntry.state) }}
+                            {{ $tc('frosh-flow-builder-insights.history.state.' + flowHistoryEntry.state) }}
                         </div>
                     </dd>
                 </sw-description-list>
                 <sw-description-list>
                     <dt>
-                        {{ $tc('frosh-flow-builder.history.columns.triggeredBy') }}
+                        {{ $tc('frosh-flow-builder-insights.history.columns.triggeredBy') }}
                     </dt>
                     <dd>
                         <router-link
@@ -79,7 +79,7 @@
             </sw-container>
             <mt-textarea
                 :model-value="flowData"
-                :label="$tc('frosh-flow-builder.dataModal.payloadLabel')"
+                :label="$tc('frosh-flow-builder-insights.dataModal.payloadLabel')"
                 :disabled="true"
             />
         </sw-container>
@@ -94,7 +94,7 @@
             >
                 <sw-description-list>
                     <dt>
-                        {{ $tc('frosh-flow-builder.dataModal.errorType') }}
+                        {{ $tc('frosh-flow-builder-insights.dataModal.errorType') }}
                     </dt>
                     <dd>
                         {{ flowHistoryEntry.error.type }}
@@ -102,7 +102,7 @@
                 </sw-description-list>
                 <sw-description-list>
                     <dt>
-                        {{ $tc('frosh-flow-builder.dataModal.errorLine') }}
+                        {{ $tc('frosh-flow-builder-insights.dataModal.errorLine') }}
                     </dt>
                     <dd>
                         {{ flowHistoryEntry.error.line }}
@@ -111,7 +111,7 @@
             </sw-container>
             <sw-description-list class="frosh-flow-data-modal__error-file">
                 <dt>
-                    {{ $tc('frosh-flow-builder.dataModal.errorFile') }}
+                    {{ $tc('frosh-flow-builder-insights.dataModal.errorFile') }}
                 </dt>
                 <dd>
                     {{ flowHistoryEntry.error.file }}
@@ -119,7 +119,7 @@
             </sw-description-list>
             <mt-textarea
                 :model-value="flowHistoryEntry.error.message"
-                :label="$tc('frosh-flow-builder.dataModal.errorMessage')"
+                :label="$tc('frosh-flow-builder-insights.dataModal.errorMessage')"
                 :disabled="true"
             />
         </sw-container>

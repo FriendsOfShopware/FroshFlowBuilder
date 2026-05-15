@@ -1,4 +1,4 @@
-# Frosh Flow Builder
+# Frosh Flow Builder Insights
 
 This plugin extends the Shopware 6 Flow Builder with execution history and error tracking.
 
@@ -23,18 +23,18 @@ The current feature set consists of:
 
 ### Git
 - Clone this repository into custom/plugins of your Shopware 6 installation
-- Install composer dependencies `shopware-cli extension prepare custom/plugins/FroshFlowBuilder`
-- Build the assets with `shopware-cli extension build custom/plugins/FroshFlowBuilder`
-- Install and activate via `bin/console plugin:refresh && bin/console plugin:install --activate FroshFlowBuilder`
+- Install composer dependencies `shopware-cli extension prepare custom/plugins/FroshFlowBuilderInsights`
+- Build the assets with `shopware-cli extension build custom/plugins/FroshFlowBuilderInsights`
+- Install and activate via `bin/console plugin:refresh && bin/console plugin:install --activate FroshFlowBuilderInsights`
 
 ### Packagist
-    composer require frosh/frosh-flow-builder
+    composer require frosh/flow-builder-insights
     bin/console plugin:refresh
-    bin/console plugin:install --activate FroshFlowBuilder
+    bin/console plugin:install --activate FroshFlowBuilderInsights
 
 ## Configuration
 
-Configure the plugin via the administration (Settings → Extensions → Frosh Flow Builder) or via system config:
+Configure the plugin via the administration (Settings → Extensions → Frosh Flow Builder Insights) or via system config:
 
 | Key | Default | Description |
 |-----|---------|-------------|
@@ -48,4 +48,4 @@ Configure the plugin via the administration (Settings → Extensions → Frosh F
 
 | Task | Description |
 |------|-------------|
-| `Frosh\FlowBuilder\ScheduledTask\CleanupFlowStateTableTask` | Deletes flow execution history entries older than the configured retention time |
+| `Frosh\FlowBuilderInsights\ScheduledTask\CleanupFlowStateTableTask` | Deletes flow execution history entries older than the configured retention time |

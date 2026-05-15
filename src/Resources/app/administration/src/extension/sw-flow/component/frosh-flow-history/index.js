@@ -23,20 +23,20 @@ Component.register('frosh-flow-history', {
                 {
                     property: 'createdAt',
                     label: this.$tc(
-                        'frosh-flow-builder.history.columns.executedAt'
+                        'frosh-flow-builder-insights.history.columns.executedAt'
                     ),
                     primary: true,
                 },
                 {
                     property: 'state',
                     label: this.$tc(
-                        'frosh-flow-builder.history.columns.status'
+                        'frosh-flow-builder-insights.history.columns.status'
                     ),
                 },
                 {
                     property: 'triggeredBy',
                     label: this.$tc(
-                        'frosh-flow-builder.history.columns.triggeredBy'
+                        'frosh-flow-builder-insights.history.columns.triggeredBy'
                     ),
                 },
             ];

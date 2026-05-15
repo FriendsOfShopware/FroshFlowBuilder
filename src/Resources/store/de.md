@@ -16,8 +16,8 @@ Der aktuelle Funktionsumfang besteht aus:
     *   Fügt einen Health-Check hinzu, der fehlgeschlagene Flow-Ausführungen im System-Status meldet
     *   Aktiviert sich automatisch, wenn FroshTools installiert ist
 
-Link to repository: [https://github.com/FriendsOfShopware/FroshFlowBuilder](https://github.com/FriendsOfShopware/FroshFlowBuilder)
+Link to repository: [https://github.com/FriendsOfShopware/FroshFlowBuilderInsights](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights)
 
 Dieses Plugin wird von [@FriendsOfShopware](https://store.shopware.com/friends-of-shopware.html) entwickelt.
 
-Bei Fragen / Fehlern bitte ein [Github Issue](https://github.com/FriendsOfShopware/FroshFlowBuilder/issues) erstellen
+Bei Fragen / Fehlern bitte ein [Github Issue](https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/issues) erstellen

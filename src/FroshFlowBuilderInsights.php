@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Frosh\FlowBuilder;
+namespace Frosh\FlowBuilderInsights;
 
-use Frosh\FlowBuilder\FroshTools\Checker\FlowExecutionErrorChecker;
+use Frosh\FlowBuilderInsights\FroshTools\Checker\FlowExecutionErrorChecker;
 use Frosh\Tools\Components\Health\Checker\CheckerInterface;
 use Shopware\Core\Framework\Plugin;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
-class FroshFlowBuilder extends Plugin
+class FroshFlowBuilderInsights extends Plugin
 {
     public function build(ContainerBuilder $container): void
     {

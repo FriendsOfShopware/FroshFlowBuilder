@@ -1,8 +1,8 @@
 <?php
 
-namespace Frosh\FlowBuilder\Subscriber;
+namespace Frosh\FlowBuilderInsights\Subscriber;
 
-use Frosh\FlowBuilder\Entity\FlowState\FlowStateCollection;
+use Frosh\FlowBuilderInsights\Entity\FlowState\FlowStateCollection;
 use Psr\Log\LoggerInterface;
 use Shopware\Core\Content\Flow\Extension\FlowExecutorExtension;
 use Shopware\Core\Framework\Api\Context\AdminApiSource;

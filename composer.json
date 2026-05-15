@@ -1,5 +1,5 @@
 {
-    "name": "frosh/flow-builder",
+    "name": "frosh/flow-builder-insights",
     "description": "Extends the Shopware 6 Flow Builder with history and error tracking",
     "license": "MIT",
     "type": "shopware-platform-plugin",
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Frosh\\FlowBuilder\\": "src/"
+            "Frosh\\FlowBuilderInsights\\": "src/"
         }
     },
     "extra": {
@@ -25,17 +25,17 @@
             "en-GB": "Extends the Shopware 6 Flow Builder with history and error tracking. Every flow run is logged, failed flows store exception details on the flow detail page."
         },
         "label": {
-            "de-DE": "Flow Builder",
-            "en-GB": "Flow Builder"
+            "de-DE": "Flow Builder Insights",
+            "en-GB": "Flow Builder Insights"
         },
         "manufacturerLink": {
-            "de-DE": "https://github.com/FriendsOfShopware/FroshFlowBuilder",
-            "en-GB": "https://github.com/FriendsOfShopware/FroshFlowBuilder"
+            "de-DE": "https://github.com/FriendsOfShopware/FroshFlowBuilderInsights",
+            "en-GB": "https://github.com/FriendsOfShopware/FroshFlowBuilderInsights"
         },
-        "shopware-plugin-class": "Frosh\\FlowBuilder\\FroshFlowBuilder",
+        "shopware-plugin-class": "Frosh\\FlowBuilderInsights\\FroshFlowBuilderInsights",
         "supportLink": {
-            "de-DE": "https://github.com/FriendsOfShopware/FroshFlowBuilder/issues",
-            "en-GB": "https://github.com/FriendsOfShopware/FroshFlowBuilder/issues"
+            "de-DE": "https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/issues",
+            "en-GB": "https://github.com/FriendsOfShopware/FroshFlowBuilderInsights/issues"
         }
     },
     "scripts": {
