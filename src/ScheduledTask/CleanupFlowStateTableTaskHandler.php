@@ -12,14 +12,12 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 #[AsMessageHandler(handles: CleanupFlowStateTableTask::class)]
 class CleanupFlowStateTableTaskHandler extends ScheduledTaskHandler
 {
-
     public function __construct(
         EntityRepository $scheduledTaskRepository,
         LoggerInterface $exceptionLogger,
         private readonly Connection $connection,
         private readonly SystemConfigService $configService,
-    )
-    {
+    ) {
         parent::__construct($scheduledTaskRepository, $exceptionLogger);
     }
 
@@ -30,7 +28,7 @@ DELETE FROM `frosh_flow_state` WHERE created_at < DATE_SUB(NOW(), INTERVAL :rete
 SQL;
 
         $this->connection->executeStatement($sql, [
-            'retentionTime' => $this->configService->getInt('FroshFlowBuilder.config.retentionTime')
+            'retentionTime' => $this->configService->getInt('FroshFlowBuilder.config.retentionTime'),
         ]);
     }
 }

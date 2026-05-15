@@ -11,17 +11,15 @@ use Frosh\Tools\Components\Health\SettingsResult;
 
 class FlowExecutionErrorChecker implements CheckerInterface, HealthCheckerInterface
 {
-
     public function __construct(
         private readonly Connection $connection,
-    )
-    {
+    ) {
     }
 
     public function collect(HealthCollection $collection): void
     {
         $numberOfFailedFlows = $this->connection->fetchOne('SELECT COUNT(*) FROM frosh_flow_state WHERE state = :errorState LIMIT 1;', [
-            'errorState' => FlowSubscriber::FLOW_STATE_ERROR
+            'errorState' => FlowSubscriber::FLOW_STATE_ERROR,
         ]);
 
         if ($numberOfFailedFlows > 0) {

@@ -1,0 +1,11 @@
+parameters:
+    level: 8
+    paths:
+        - src
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        -
+            message: "#no value type specified in iterable type array#"
+    excludePaths:
+        - src/FroshTools
+        - vendor (?)

@@ -2,6 +2,8 @@
 
 namespace Frosh\FlowBuilder\Subscriber;
 
+use Frosh\FlowBuilder\Entity\FlowState\FlowStateCollection;
+use Psr\Log\LoggerInterface;
 use Shopware\Core\Content\Flow\Extension\FlowExecutorExtension;
 use Shopware\Core\Framework\Api\Context\AdminApiSource;
 use Shopware\Core\Framework\Context;
@@ -14,24 +16,26 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class FlowSubscriber implements EventSubscriberInterface
 {
-
     public const FLOW_STATE_SUCCESS = 'success';
     public const FLOW_STATE_ERROR = 'error';
 
+    /**
+     * @param EntityRepository<FlowStateCollection> $flowStateRepo
+     */
     public function __construct(
         #[Autowire(service: 'frosh_flow_state.repository')]
         private readonly EntityRepository $flowStateRepo,
         #[Autowire(service: 'request_stack')]
-        private readonly RequestStack $requestStack
-    )
-    {
+        private readonly RequestStack $requestStack,
+        private readonly LoggerInterface $logger,
+    ) {
     }
 
     public static function getSubscribedEvents()
     {
         return [
-            FlowExecutorExtension::NAME . ".post" => 'onFlowExecutedSuccess',
-            FlowExecutorExtension::NAME . ".error" => 'onFlowExecutedError',
+            FlowExecutorExtension::NAME . '.post' => 'onFlowExecutedSuccess',
+            FlowExecutorExtension::NAME . '.error' => 'onFlowExecutedError',
         ];
     }
 
@@ -39,7 +43,6 @@ class FlowSubscriber implements EventSubscriberInterface
     {
         $this->handleFlowExecution($extension, self::FLOW_STATE_SUCCESS);
     }
-
 
     public function onFlowExecutedError(FlowExecutorExtension $extension): void
     {
@@ -54,9 +57,9 @@ class FlowSubscriber implements EventSubscriberInterface
         $userId = null;
         $integrationId = null;
 
-        if($context instanceof Context) {
+        if ($context instanceof Context) {
             $contextSource = $context->getSource();
-            if($contextSource instanceof AdminApiSource){
+            if ($contextSource instanceof AdminApiSource) {
                 $userId = $contextSource->getUserId();
                 $integrationId = $contextSource->getIntegrationId();
             }
@@ -65,7 +68,7 @@ class FlowSubscriber implements EventSubscriberInterface
         $salesChannelContext = $request?->attributes->get(PlatformRequest::ATTRIBUTE_SALES_CHANNEL_CONTEXT_OBJECT);
         $customerId = null;
 
-        if($salesChannelContext instanceof SalesChannelContext) {
+        if ($salesChannelContext instanceof SalesChannelContext) {
             $customerId = $salesChannelContext->getCustomerId();
         }
 
@@ -79,15 +82,20 @@ class FlowSubscriber implements EventSubscriberInterface
                     'message' => $exception->getMessage(),
                     'file' => $exception->getFile(),
                     'line' => $exception->getLine(),
-                    'type' => $exception::class
+                    'type' => $exception::class,
                 ] : null,
                 'data' => $extension->event->stored(),
                 'userId' => $userId,
                 'integrationId' => $integrationId,
-                'customerId' => $customerId
+                'customerId' => $customerId,
             ]], Context::createCLIContext());
-        }catch(\Throwable $e) {
-            dd($e->getMessage());
+        } catch (\Throwable $e) {
+            $this->logger->error('Failed to persist flow execution state', [
+                'flowId' => $extension->flow->getId(),
+                'state' => $state,
+                'exception' => $e,
+            ]);
+            throw $e;
         }
     }
 }

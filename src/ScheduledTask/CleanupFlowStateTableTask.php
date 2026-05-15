@@ -6,7 +6,6 @@ use Shopware\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 
 class CleanupFlowStateTableTask extends ScheduledTask
 {
-
     public static function getTaskName(): string
     {
         return 'frosh.cleanup_flow_state_table';
