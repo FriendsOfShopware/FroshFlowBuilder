@@ -23,4 +23,9 @@ class FlowExtension extends EntityExtension
     {
         return FlowDefinition::ENTITY_NAME;
     }
+
+    public function getDefinitionClass(): string
+    {
+        return FlowDefinition::class;
+    }
 }

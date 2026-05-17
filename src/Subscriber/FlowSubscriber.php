@@ -72,7 +72,8 @@ class FlowSubscriber implements EventSubscriberInterface
             $customerId = $salesChannelContext->getCustomerId();
         }
 
-        $exception = $extension->exception;
+        // @phpstan-ignore-next-line phpstan/function.impossibleType
+        $exception = property_exists($extension, 'exception') ? $extension->exception : null;
 
         try {
             $this->flowStateRepo->create([[
