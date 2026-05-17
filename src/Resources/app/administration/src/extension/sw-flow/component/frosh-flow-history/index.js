@@ -3,6 +3,12 @@ import template from './frosh-flow-history.html.twig';
 const { Component, Store } = Shopware;
 const { mapState } = Component.getComponentHelper();
 
+// Shopware 6.7 migrated the flow state from the Vuex module 'swFlowState'
+// to the Pinia store 'swFlow'. Resolve the right source per platform version.
+const flowStateMapping = Shopware.Feature.isActive('v6.7.0.0')
+    ? mapState(() => Store.get('swFlow'), ['flow'])
+    : mapState('swFlowState', ['flow']);
+
 Component.register('frosh-flow-history', {
     template,
     props: {
@@ -44,7 +50,7 @@ Component.register('frosh-flow-history', {
         dateFilter() {
             return Shopware.Filter.getByName('date');
         },
-        ...mapState(() => Store.get('swFlow'), ['flow']),
+        ...flowStateMapping,
     },
     methods: {
         getStateColor(state) {
